@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-slate-800 font-sans antialiased selection:bg-primary-100 selection:text-primary-900;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-slate-100 shadow-card rounded-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-violet-600 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-500/20 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-700 font-semibold py-2.5 px-5 rounded-xl border border-slate-200 transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98];
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-slate-50 text-slate-600 hover:text-primary-600;
+  }
+
+  .nav-item.active {
+    @apply bg-primary-50 text-primary-700 font-semibold;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+  }
+}
